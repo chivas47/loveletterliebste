@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affirmations for Meine Liebste 🌻</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌻</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d4a017;
+            --gold-light: #f9c80e;
+            --gold-deep: #b8740a;
+            --sun-core: #fff4a3;
+            --sun-edge: #ffae42;
+            --sunflower: #f9c80e;
+            --terracotta: #e07856;
+            --sage: #84a98c;
+            --sky-top: #c8d8e4;
+            --sky-mid: #ffd89b;
+            --sky-bottom: #f4a261;
+            --cream: #fff8e1;
+            --cream-warm: #f5e6c8;
+            --text-dark: #3d2914;
+            --text-mid: #6b4c30;
+            --text-soft: #8a6a45;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+
+        body {
+            font-family: 'EB Garamond', serif;
+            background: var(--sky-mid);
+            color: var(--text-dark);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px 60px;
+            min-height: 100dvh;
+            width: 100%;
+            overscroll-behavior-x: none;
+            touch-action: pan-y;
+        }
+
+        /* ── BACKGROUND LAYERS ─────────────────────────────── */
+        .bg-gradient {
+            width: 100%; height: 100%;
+            position: fixed; inset: 0; z-index: 0;
+            background:
+                radial-gradient(ellipse 110% 60% at 70% -5%, #ffe9b0 0%, transparent 55%),
+                radial-gradient(ellipse 90% 70% at 20% 100%, #f5b07b 0%, transparent 60%),
+                radial-gradient(ellipse 100% 50% at 80% 100%, #f0a868 0%, transparent 55%),
+                linear-gradient(180deg, #c8d8e4 0%, #ffe5b8 35%, #ffc78c 65%, #f4a261 100%);
+        }
+
+        .haze {
+            width: 100%; height: 100%;
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background:
+                radial-gradient(ellipse 200% 35% at 50% 0%, rgba(255, 220, 130, 0.35) 0%, transparent 60%),
+                radial-gradient(ellipse 150% 25% at 25% 90%, rgba(245, 160, 100, 0.20) 0%, transparent 55%),
+                radial-gradient(ellipse 150% 25% at 75% 95%, rgba(255, 180, 110, 0.18) 0%, transparent 55%);
+            animation: hazeShift 22s ease-in-out infinite alternate;
+        }
+
+        @keyframes hazeShift {
+            0%   { opacity: 0.7; transform: scaleX(1) scaleY(1); }
+            50%  { opacity: 1;   transform: scaleX(1.04) scaleY(1.08); }
+            100% { opacity: 0.8; transform: scaleX(0.98) scaleY(1); }
+        }
+
+        /* ── SUN ───────────────────────────────────────────── */
+        .sun {
+            position: fixed;
+            top: 50px; right: 70px;
+            width: 110px; height: 110px;
+            z-index: 1; pointer-events: none;
+        }
+
+        .sun-rays {
+            position: absolute;
+            inset: -50px;
+            animation: sunRotate 90s linear infinite;
+            opacity: 0.85;
+        }
+
+        .sun-rays line {
+            stroke: rgba(255, 200, 80, 0.55);
+            stroke-width: 2;
+            stroke-linecap: round;
+            filter: drop-shadow(0 0 6px rgba(255, 200, 80, 0.6));
+        }
+
+        @keyframes sunRotate {
+            from { transform: rotate(0deg); }
+            to   { transform: rotate(360deg); }
+        }
+
+        .sun-body {
+            position: absolute; inset: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle at 38% 35%, #fffadf 0%, #ffe48a 35%, #ffae42 75%, #f08d20 100%);
+            box-shadow:
+                0 0 40px 12px rgba(255, 200, 80, 0.45),
+                0 0 90px 30px rgba(255, 200, 80, 0.22),
+                0 0 160px 50px rgba(255, 180, 60, 0.12),
+                inset -8px -6px 22px rgba(180, 90, 0, 0.18),
+                inset 6px 8px 18px rgba(255, 250, 220, 0.4);
+            animation: sunPulse 5s ease-in-out infinite alternate;
+        }
+
+        @keyframes sunPulse {
+            0%   { box-shadow: 0 0 40px 12px rgba(255, 200, 80, 0.4), 0 0 90px 30px rgba(255, 200, 80, 0.18), 0 0 160px 50px rgba(255, 180, 60, 0.1), inset -8px -6px 22px rgba(180, 90, 0, 0.18), inset 6px 8px 18px rgba(255, 250, 220, 0.4); }
+            100% { box-shadow: 0 0 55px 18px rgba(255, 200, 80, 0.55), 0 0 120px 40px rgba(255, 200, 80, 0.25), 0 0 200px 70px rgba(255, 180, 60, 0.15), inset -8px -6px 22px rgba(180, 90, 0, 0.18), inset 6px 8px 18px rgba(255, 250, 220, 0.5); }
+        }
+
+        /* ── DUST / POLLEN CANVAS ──────────────────────────── */
+        .dust-canvas {
+            width: 100%; height: 100%;
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
+        }
+
+        /* ── BIRD (gentle silhouettes gliding across) ──────── */
+        .bird {
+            position: fixed;
+            z-index: 1;
+            pointer-events: none;
+            top: var(--top);
+            left: 110%;
+            width: 26px; height: 12px;
+            opacity: 0;
+            animation: birdFly var(--dur) var(--delay) forwards;
+        }
+
+        .bird svg { width: 100%; height: 100%; }
+        .bird path { stroke: var(--text-dark); stroke-width: 1.6; fill: none; stroke-linecap: round; opacity: 0.55; }
+
+        @keyframes birdFly {
+            0%   { opacity: 0; left: 110%; }
+            8%   { opacity: 0.7; }
+            92%  { opacity: 0.6; }
+            100% { opacity: 0; left: -10%; }
+        }
+
+        /* ── FLOATING PETALS ──────────────────────────────── */
+        .petal {
+            position: fixed;
+            z-index: 1;
+            pointer-events: none;
+            width: 7px; height: 14px;
+            border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+            background: linear-gradient(180deg, #ffd23f 0%, #f9c80e 50%, #d4a017 100%);
+            box-shadow: 0 0 8px rgba(249, 200, 14, 0.4);
+            animation: petalDrift var(--dur) var(--delay) infinite linear;
+        }
+
+        @keyframes petalDrift {
+            0%   { transform: translateY(105vh) translateX(0) rotate(0deg); opacity: 0; }
+            10%  { opacity: 0.85; }
+            90%  { opacity: 0.7; }
+            100% { transform: translateY(-15vh) translateX(calc(sin(var(--t)) * 60px)) rotate(720deg); opacity: 0; }
+        }
+
+        /* ── CONTAINER ─────────────────────────────────────── */
+        .container {
+            max-width: 720px; width: 100%;
+            position: relative; z-index: 10;
+            display: flex; flex-direction: column; align-items: center;
+        }
+
+        /* ── HEADER ────────────────────────────────────────── */
+        header {
+            text-align: center;
+            margin-bottom: 56px;
+            animation: headerReveal 1.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .pre-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 0.85em;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: var(--gold-deep);
+            opacity: 0.9;
+            margin-bottom: 14px;
+        }
+
+        h1 {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: clamp(2.8em, 9vw, 5em);
+            line-height: 1;
+            letter-spacing: 3px;
+            background: linear-gradient(135deg, #b8740a 0%, #f9c80e 25%, #ffae42 50%, #ffd56b 75%, #d4a017 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 30px rgba(255, 174, 66, 0.45));
+            margin-bottom: 14px;
+        }
+
+        .subtitle-german {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.5em;
+            color: var(--terracotta);
+            margin-bottom: 6px;
+            opacity: 0.95;
+        }
+
+        .subtitle {
+            font-family: 'EB Garamond', serif;
+            font-style: italic;
+            font-size: 1.15em;
+            color: var(--text-mid);
+            opacity: 0.85;
+            letter-spacing: 1px;
+        }
+
+        .divider {
+            display: flex; align-items: center; gap: 16px;
+            margin: 28px auto 0;
+            width: 320px;
+        }
+        .divider-line {
+            flex: 1; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 160, 23, 0.55), transparent);
+        }
+        .divider-flower {
+            font-size: 1.1em;
+            filter: drop-shadow(0 0 8px rgba(249, 200, 14, 0.6));
+        }
+
+        @keyframes headerReveal {
+            from { opacity: 0; transform: translateY(-30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── CARD ──────────────────────────────────────────── */
+        .card-wrapper {
+            width: 100%; perspective: 1200px;
+            margin-bottom: 36px;
+        }
+
+        .card {
+            position: relative;
+            width: 100%;
+            min-height: 340px;
+            border-radius: 24px;
+            padding: 56px 48px;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: scale(0.97) translateY(6px);
+            transition: opacity 0.35s ease, transform 0.35s ease;
+
+            /* Warm glass morphism */
+            background: rgba(255, 248, 225, 0.45);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+
+            /* Layered borders */
+            border: 1px solid rgba(212, 160, 23, 0.35);
+            outline: 1px solid rgba(255, 255, 255, 0.45);
+            outline-offset: 4px;
+
+            /* Shadows */
+            box-shadow:
+                0 0 0 1px rgba(212, 160, 23, 0.1),
+                0 4px 24px rgba(180, 90, 30, 0.18),
+                0 0 60px rgba(255, 200, 80, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.55),
+                inset 0 -1px 0 rgba(180, 90, 30, 0.08);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute; inset: 0;
+            border-radius: 24px;
+            background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255, 220, 130, 0.25) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .card::after {
+            content: '🌻';
+            position: absolute;
+            top: 16px; right: 18px;
+            font-size: 1em;
+            opacity: 0.55;
+            filter: drop-shadow(0 0 4px rgba(249, 200, 14, 0.4));
+        }
+
+        .corner-ornament {
+            position: absolute;
+            font-size: 1em;
+            opacity: 0.55;
+            filter: drop-shadow(0 0 4px rgba(249, 200, 14, 0.4));
+        }
+        .corner-ornament.tl { top: 16px; left: 18px; }
+        .corner-ornament.bl { bottom: 16px; left: 18px; }
+        .corner-ornament.br { bottom: 16px; right: 18px; }
+
+        .card.fade-out {
+            opacity: 0 !important;
+            transform: scale(0.97) translateY(6px) !important;
+        }
+
+        .card-glow {
+            position: absolute; inset: -2px;
+            border-radius: 26px;
+            background: transparent;
+            transition: box-shadow 0.5s ease;
+            pointer-events: none;
+        }
+        .card:hover .card-glow {
+            box-shadow: 0 0 60px rgba(255, 200, 80, 0.25), 0 0 100px rgba(224, 120, 86, 0.12);
+        }
+
+        .card-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            animation: iconPulse 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 14px rgba(255, 200, 80, 0.55));
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50%      { transform: scale(1.08) rotate(2deg); }
+        }
+
+        .card-category {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 0.7em;
+            color: var(--gold-deep);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+            opacity: 0.95;
+        }
+
+        .card-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.15em, 3vw, 1.6em);
+            line-height: 1.65;
+            color: var(--text-dark);
+            font-weight: 400;
+            max-width: 540px;
+        }
+
+        /* ── BUTTON ────────────────────────────────────────── */
+        .button-container {
+            text-align: center;
+            margin-top: 8px;
+            animation: cardReveal 2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+        }
+
+        .btn {
+            position: relative;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 0.85em;
+            padding: 18px 48px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: var(--gold-deep);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-border {
+            position: absolute; inset: 0;
+            border-radius: 60px;
+            border: 1px solid rgba(212, 160, 23, 0.55);
+            background: linear-gradient(135deg, rgba(255, 220, 130, 0.35), rgba(224, 120, 86, 0.18));
+            transition: all 0.4s ease;
+            box-shadow: 0 0 20px rgba(255, 200, 80, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-fill {
+            position: absolute; inset: 0;
+            border-radius: 60px;
+            background: linear-gradient(135deg, rgba(255, 200, 80, 0.55), rgba(224, 120, 86, 0.4));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn:hover .btn-fill { transform: scaleX(1); }
+        .btn:hover .btn-border {
+            border-color: rgba(212, 160, 23, 0.85);
+            box-shadow: 0 0 30px rgba(255, 200, 80, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        }
+        .btn:hover { color: #5a3a0a; transform: translateY(-2px); }
+        .btn:active { transform: translateY(0); }
+
+        .btn span { position: relative; z-index: 1; }
+
+        @keyframes cardReveal {
+            from { opacity: 0; transform: translateY(40px) scale(0.95); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* ── COUNTER ───────────────────────────────────────── */
+        .counter {
+            text-align: center;
+            margin-top: 28px;
+            font-style: italic;
+            font-size: 1em;
+            color: var(--text-soft);
+            opacity: 0.85;
+            letter-spacing: 0.5px;
+            min-height: 1.5em;
+            animation: cardReveal 2s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both;
+        }
+
+        /* ── FOOTER ────────────────────────────────────────── */
+        footer {
+            text-align: center;
+            margin-top: 56px;
+            animation: cardReveal 2s cubic-bezier(0.16, 1, 0.3, 1) 1s both;
+        }
+
+        .footer-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.15em;
+            color: var(--text-mid);
+            opacity: 0.9;
+            display: flex; align-items: center; gap: 14px; justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .heart {
+            display: inline-block;
+            color: var(--terracotta);
+            font-style: normal;
+            animation: heartbeat 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 6px rgba(224, 120, 86, 0.55));
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            15%      { transform: scale(1.2); }
+            30%      { transform: scale(1); }
+            45%      { transform: scale(1.1); }
+        }
+
+        /* ── RESPONSIVE ────────────────────────────────────── */
+        @media (max-width: 600px) {
+            body { padding: 20px 16px 50px; align-items: flex-start; padding-top: 24px; }
+            header { margin-bottom: 36px; }
+            h1 { font-size: clamp(2.2em, 12vw, 3.5em); letter-spacing: 2px; }
+            .card { min-height: 280px; padding: 36px 24px; border-radius: 18px; }
+            .card-text { font-size: 1.1em; }
+            .card-icon { font-size: 2.8em; }
+            .sun { width: 70px; height: 70px; top: 18px; right: 18px; }
+            .sun-rays { inset: -32px; }
+            .divider { width: 240px; }
+            footer { margin-top: 36px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="haze"></div>
+
+    <div class="sun">
+        <svg class="sun-rays" viewBox="-100 -100 200 200" xmlns="http://www.w3.org/2000/svg">
+            <g>
+                <line x1="0" y1="-62" x2="0" y2="-92"/>
+                <line x1="0" y1="62" x2="0" y2="92"/>
+                <line x1="-62" y1="0" x2="-92" y2="0"/>
+                <line x1="62" y1="0" x2="92" y2="0"/>
+                <line x1="44" y1="-44" x2="65" y2="-65"/>
+                <line x1="-44" y1="-44" x2="-65" y2="-65"/>
+                <line x1="44" y1="44" x2="65" y2="65"/>
+                <line x1="-44" y1="44" x2="-65" y2="65"/>
+                <line x1="22" y1="-58" x2="32" y2="-86"/>
+                <line x1="-22" y1="-58" x2="-32" y2="-86"/>
+                <line x1="22" y1="58" x2="32" y2="86"/>
+                <line x1="-22" y1="58" x2="-32" y2="86"/>
+                <line x1="58" y1="-22" x2="86" y2="-32"/>
+                <line x1="58" y1="22" x2="86" y2="32"/>
+                <line x1="-58" y1="-22" x2="-86" y2="-32"/>
+                <line x1="-58" y1="22" x2="-86" y2="32"/>
+            </g>
+        </svg>
+        <div class="sun-body"></div>
+    </div>
+
+    <canvas class="dust-canvas" id="dustCanvas"></canvas>
+
+    <div class="container">
+        <header>
+            <p class="pre-title">A year of love, in many parts</p>
+            <h1>Meine Liebste</h1>
+            <p class="subtitle-german">Mein Sonnenschein 🌻</p>
+            <p class="subtitle">One year, every day, all the love</p>
+            <div class="divider">
+                <div class="divider-line"></div>
+                <div class="divider-flower">🌻</div>
+                <div class="divider-line"></div>
+            </div>
+        </header>
+
+        <div class="card-wrapper">
+            <div class="card" id="affirmationCard" onclick="generateAffirmation()">
+                <div class="card-glow"></div>
+                <span class="corner-ornament tl">🌻</span>
+                <span class="corner-ornament bl">🌻</span>
+                <span class="corner-ornament br">🌻</span>
+
+                <div class="card-icon" id="cardIcon">☀️</div>
+                <div class="card-category" id="cardCategory">Love</div>
+                <div class="card-text" id="cardText">Tap to receive your daily sunshine, or press the button below</div>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button class="btn" onclick="generateAffirmation()">
+                <div class="btn-border"></div>
+                <div class="btn-fill"></div>
+                <span>🌻 &nbsp; New Affirmation &nbsp; 🌻</span>
+            </button>
+        </div>
+
+        <p class="counter" id="counter"></p>
+
+        <footer>
+            <p class="footer-text">
+                You are loved <span class="heart">♥</span>
+                You are my sunshine <span class="heart">♥</span>
+                You are home
+            </p>
+        </footer>
+    </div>
+
+    <script>
+    // ── DUST / POLLEN CANVAS ─────────────────────────────────
+    (function() {
+        const canvas = document.getElementById('dustCanvas');
+        const ctx = canvas.getContext('2d');
+        let motes = [];
+        let W, H;
+
+        // Warm dust tints: gold, honey, cream, soft peach
+        const tints = [
+            [255, 220, 130], // honey gold
+            [255, 240, 180], // pale cream
+            [255, 200, 90],  // amber
+            [255, 180, 110], // peach
+            [245, 220, 150], // soft yellow
+        ];
+
+        function resize() {
+            W = canvas.width  = window.innerWidth;
+            H = canvas.height = window.innerHeight;
+        }
+
+        function createMotes() {
+            motes = [];
+            // Layer 1: distant tiny sparkles
+            for (let i = 0; i < 130; i++) {
+                const t = tints[Math.floor(Math.random() * tints.length)];
+                motes.push({
+                    x: Math.random() * W, y: Math.random() * H,
+                    r: Math.random() * 0.7 + 0.2,
+                    alpha: Math.random() * 0.5 + 0.25,
+                    twinkleSpeed: Math.random() * 0.008 + 0.002,
+                    twinklePhase: Math.random() * Math.PI * 2,
+                    driftX: (Math.random() - 0.3) * 0.04,
+                    driftY: (Math.random() - 0.7) * 0.05,
+                    color: t
+                });
+            }
+            // Layer 2: mid motes
+            for (let i = 0; i < 55; i++) {
+                const t = tints[Math.floor(Math.random() * tints.length)];
+                motes.push({
+                    x: Math.random() * W, y: Math.random() * H,
+                    r: Math.random() * 0.9 + 0.5,
+                    alpha: Math.random() * 0.55 + 0.3,
+                    twinkleSpeed: Math.random() * 0.015 + 0.006,
+                    twinklePhase: Math.random() * Math.PI * 2,
+                    driftX: (Math.random() - 0.3) * 0.06,
+                    driftY: (Math.random() - 0.7) * 0.08,
+                    color: t
+                });
+            }
+            // Layer 3: bright foreground motes with halo
+            for (let i = 0; i < 22; i++) {
+                const t = tints[Math.floor(Math.random() * tints.length)];
+                motes.push({
+                    x: Math.random() * W, y: Math.random() * H,
+                    r: Math.random() * 1.2 + 0.9,
+                    alpha: Math.random() * 0.5 + 0.5,
+                    twinkleSpeed: Math.random() * 0.02 + 0.008,
+                    twinklePhase: Math.random() * Math.PI * 2,
+                    driftX: (Math.random() - 0.3) * 0.09,
+                    driftY: (Math.random() - 0.7) * 0.11,
+                    color: t
+                });
+            }
+        }
+
+        let frame = 0;
+        function draw() {
+            ctx.clearRect(0, 0, W, H);
+            frame++;
+            motes.forEach(m => {
+                m.x += m.driftX;
+                m.y += m.driftY;
+                if (m.x < -2) m.x = W + 2;
+                if (m.x > W + 2) m.x = -2;
+                if (m.y < -2) m.y = H + 2;
+                if (m.y > H + 2) m.y = -2;
+
+                const a = m.alpha * (0.55 + 0.45 * Math.sin(m.twinklePhase + frame * m.twinkleSpeed));
+                const [r, g, b] = m.color;
+
+                if (m.r > 0.85) {
+                    const grd = ctx.createRadialGradient(m.x, m.y, 0, m.x, m.y, m.r * 4.5);
+                    grd.addColorStop(0, `rgba(${r},${g},${b},${a * 0.35})`);
+                    grd.addColorStop(1, `rgba(${r},${g},${b},0)`);
+                    ctx.beginPath();
+                    ctx.arc(m.x, m.y, m.r * 4.5, 0, Math.PI * 2);
+                    ctx.fillStyle = grd;
+                    ctx.fill();
+                }
+
+                ctx.beginPath();
+                ctx.arc(m.x, m.y, m.r, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${r},${g},${b},${a})`;
+                ctx.fill();
+            });
+            requestAnimationFrame(draw);
+        }
+
+        resize(); createMotes(); draw();
+        window.addEventListener('resize', () => { resize(); createMotes(); });
+    })();
+
+    // ── BIRDS GLIDING ACROSS ──────────────────────────────────
+    function fireBird() {
+        const el = document.createElement('div');
+        el.className = 'bird';
+        const top = (8 + Math.random() * 35) + '%';
+        const dur = (12 + Math.random() * 10).toFixed(1) + 's';
+        el.style.setProperty('--top', top);
+        el.style.setProperty('--dur', dur);
+        el.style.setProperty('--delay', '0s');
+
+        // Two simple wing arcs, hand-drawn feel
+        el.innerHTML = `
+            <svg viewBox="0 0 30 12">
+                <path d="M2 7 Q6 2, 10 7 M10 7 Q14 2, 18 7"/>
+            </svg>
+        `;
+
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), (parseFloat(dur) + 0.5) * 1000);
+
+        const next = 14000 + Math.random() * 16000;
+        setTimeout(fireBird, next);
+    }
+    setTimeout(fireBird, 5000 + Math.random() * 4000);
+
+    // ── FLOATING PETALS ───────────────────────────────────────
+    (function() {
+        const petalColors = [
+            'linear-gradient(180deg, #ffd23f 0%, #f9c80e 50%, #d4a017 100%)',
+            'linear-gradient(180deg, #ffe48a 0%, #ffae42 60%, #b8740a 100%)',
+            'linear-gradient(180deg, #fff0a3 0%, #ffd23f 55%, #d4a017 100%)',
+            'linear-gradient(180deg, #ffc78c 0%, #f9c80e 60%, #b8740a 100%)',
+        ];
+        for (let i = 0; i < 16; i++) {
+            const p = document.createElement('div');
+            p.className = 'petal';
+            p.style.left = (Math.random() * 100) + '%';
+            p.style.setProperty('--dur', (14 + Math.random() * 18) + 's');
+            p.style.setProperty('--delay', (Math.random() * 18) + 's');
+            p.style.setProperty('--t', (Math.random() * 6.28).toFixed(2) + 'rad');
+            p.style.background = petalColors[Math.floor(Math.random() * petalColors.length)];
+            // Vary size slightly
+            if (Math.random() > 0.6) { p.style.width = '9px'; p.style.height = '17px'; }
+            if (Math.random() > 0.85) { p.style.width = '5px'; p.style.height = '10px'; }
+            document.body.appendChild(p);
+        }
+    })();
+
+    // ── AFFIRMATIONS DATA ──────────────────────────────────────
+    // Edit freely, add inside jokes, keep what fits, swap what doesn't.
+    const affirmations = [
+        // SUNFLOWER ENERGY
+        { category: "Sunflower Soul", icon: "🌻", text: "I love how you turn toward joy like a sunflower toward the sun, even on the hard days 🌻☀️" },
+        { category: "Sunflower Soul", icon: "🌻", text: "You are my sunflower, tall, golden, and turning toward what matters 🌻💛" },
+        { category: "Sunflower Soul", icon: "🌻", text: "Sunflowers everywhere, because everywhere reminds me of you 🌻🌻🌻" },
+        { category: "Sunflower Soul", icon: "🌻", text: "Your warmth fills a room before you even speak 💛✨" },
+        { category: "Sunflower Soul", icon: "🌻", text: "You bloom in your own time, in your own way, and it's beautiful to watch 🌱🌻" },
+        // SUN ENERGY
+        { category: "Sun Energy", icon: "☀️", text: "Your sun energy is real, you walk into a room and everything brightens 🌟💛" },
+        { category: "Sun Energy", icon: "☀️", text: "Your laugh sounds like sunshine, if sunshine had a sound 🌞😄" },
+        { category: "Sun Energy", icon: "☀️", text: "I love how you radiate warmth, even on my cloudy days ☁️☀️" },
+        { category: "Sun Energy", icon: "☀️", text: "You bring color to ordinary days the way the sun colors the sky 🎨🌅" },
+        { category: "Sun Energy", icon: "☀️", text: "Mein Sonnenschein, you really are 💛✨" },
+        // MEDITATION & STILLNESS
+        { category: "Stillness", icon: "🧘‍♀️", text: "I love watching you meditate in the morning, all peace and golden light 🧘‍♀️✨" },
+        { category: "Stillness", icon: "🧘‍♀️", text: "You taught me that stillness is its own kind of magic 💛🕊️" },
+        { category: "Stillness", icon: "🧘‍♀️", text: "Your breath, your silence, your presence, you ground me 🌬️💕" },
+        { category: "Stillness", icon: "🕊️", text: "I love how you find quiet inside the noise of the world 🤫🌸" },
+        { category: "Stillness", icon: "🕊️", text: "Your inner calm is one of the most beautiful things about you 💖🧘‍♀️" },
+        { category: "Stillness", icon: "🧘‍♀️", text: "You sit with your thoughts the way most people sit with friends, and it's inspiring 🤲💛" },
+        // ADVENTURE
+        { category: "Adventure Spirit", icon: "🗺️", text: "I love your 'let's just go' energy, you make every weekend feel like a possibility 🗺️✨" },
+        { category: "Adventure Spirit", icon: "🌄", text: "You: 'I have an idea.' Me: *grabs the boots* 🥾💕" },
+        { category: "Adventure Spirit", icon: "🗺️", text: "Your wanderlust is contagious and I'm so here for it 🌍💛" },
+        { category: "Adventure Spirit", icon: "🌄", text: "I love how you say yes to adventures I would have said no to alone 🌄💕" },
+        { category: "Adventure Spirit", icon: "🗺️", text: "Life with you is one big trail map of yes 🗺️🌻" },
+        { category: "Adventure Spirit", icon: "🌄", text: "Your sense of adventure makes me braver than I knew I could be 💪✨" },
+        // HIKING
+        { category: "On the Trail", icon: "🥾", text: "I love how you walk uphill like it's nothing, while I'm dying ten meters behind 😅⛰️" },
+        { category: "On the Trail", icon: "⛰️", text: "Your hiking pace humbles me but I'm here for it 🥾💪" },
+        { category: "On the Trail", icon: "🥾", text: "Watching you spot trails on a map, you have that look ✨🗺️" },
+        { category: "On the Trail", icon: "🌄", text: "You at the top of any hill, hair in the wind, that's my favorite view 🌄💕" },
+        { category: "On the Trail", icon: "🥾", text: "I love how you stop to notice flowers, rocks, weird mushrooms, all of it 🌿🍄" },
+        { category: "On the Trail", icon: "⛰️", text: "Trail-tired you, sunburnt and grinning, that's a whole love language 🌞💕" },
+        // CYCLING
+        { category: "On Two Wheels", icon: "🚴‍♀️", text: "I love watching you on your bike, you're so in your element 🚴‍♀️💛" },
+        { category: "On Two Wheels", icon: "🚲", text: "You: 'just a quick ride.' Reality: 40km later. Iconic 😂🚴‍♀️" },
+        { category: "On Two Wheels", icon: "🚴‍♀️", text: "Your cycling stamina is genuinely unfair (and I love it) 💪🚲" },
+        { category: "On Two Wheels", icon: "🚲", text: "I love how cycling puts you in this calm flow state 🚴‍♀️🌬️" },
+        { category: "On Two Wheels", icon: "🚴‍♀️", text: "Your post-ride glow is the best thing about Sundays ☀️💕" },
+        // RUNNING
+        { category: "Running Free", icon: "🏃‍♀️", text: "I love that you run for fun. Wild concept to me, but I respect it deeply 🏃‍♀️😄" },
+        { category: "Running Free", icon: "🏃‍♀️", text: "Your morning runs while I'm still wrestling with my pillow, who even are you 🛌😂" },
+        { category: "Running Free", icon: "🏃‍♀️", text: "The way you talk about runner's high almost makes me want to try (almost) 🏃‍♀️✨" },
+        { category: "Running Free", icon: "🏃‍♀️", text: "Your discipline with running is honestly inspiring 💪💛" },
+        { category: "Running Free", icon: "🏃‍♀️", text: "You move through the world with such physical joy, it's contagious 💃✨" },
+        // PRODUCTIVITY
+        { category: "Doing the Thing", icon: "✅", text: "I love how you get things done. Lists checked, plans executed, world handled ✅👑" },
+        { category: "Doing the Thing", icon: "📋", text: "Your productivity puts me to shame and also motivates me 📋💪" },
+        { category: "Doing the Thing", icon: "✅", text: "Watching you move through a to-do list is genuinely magical 📝✨" },
+        { category: "Doing the Thing", icon: "📋", text: "You're like a benevolent project manager of life and I'm grateful 💼💕" },
+        { category: "Doing the Thing", icon: "✅", text: "I love that you actually finish things you start. Revolutionary concept 🏆😄" },
+        { category: "Doing the Thing", icon: "📋", text: "Your structure makes my chaos make sense 🌀💛" },
+        // TRAVEL
+        { category: "Wanderlust", icon: "✈️", text: "I love planning trips with you, we make a great team 🗺️💕" },
+        { category: "Wanderlust", icon: "🌍", text: "Anywhere with you is somewhere I want to be 🌍💛" },
+        { category: "Wanderlust", icon: "🎒", text: "Your packing skills are unmatched (mine, still working on them) 🎒😂" },
+        { category: "Wanderlust", icon: "✈️", text: "I love your travel curiosity, you actually want to know the places we go 📚🌍" },
+        { category: "Wanderlust", icon: "🌍", text: "Watching you in a new city, eyes wide, soaking it all in, that's love 💛✈️" },
+        { category: "Wanderlust", icon: "🗺️", text: "I love that 'where to next' is a real question between us 🌎💕" },
+        // YEAR ONE
+        { category: "Year One", icon: "🎉", text: "One year of you and I'm still finding new things to love 🎉💕" },
+        { category: "Year One", icon: "🥂", text: "365 days of choosing each other, and I'd choose you again tomorrow 💛✨" },
+        { category: "Year One", icon: "🎉", text: "A year ago I didn't know how good this could be. Now I do 🌻💖" },
+        { category: "Year One", icon: "🥂", text: "Year one with you went too fast and lasted forever, in the best way 🕰️💕" },
+        { category: "Year One", icon: "🎉", text: "I love what we've built in this first year. Just wait until you see year two 🏗️✨" },
+        { category: "Year One", icon: "🥂", text: "First year. First of many. My favorite chapter so far 📖💛" },
+        { category: "Year One", icon: "🎉", text: "Happy one year of us, my sunshine 🌻🥂" },
+        // YOU BEING YOU
+        { category: "You Being You", icon: "💖", text: "I love how you're soft and strong at the same time 🌻💪" },
+        { category: "You Being You", icon: "✨", text: "Your laugh is my favorite sound in any city, any country, any time 😄🌍" },
+        { category: "You Being You", icon: "💖", text: "You're more than I knew to ask for 💛✨" },
+        { category: "You Being You", icon: "✨", text: "I love every version of you, morning grump, post-meditation glow, post-run sweat 🤣💕" },
+        { category: "You Being You", icon: "💖", text: "Your eyes when you talk about something you love, that's the best view 👀💛" },
+        { category: "You Being You", icon: "✨", text: "You're a dreamer and a doer at once, and that's rare 🌅💪" },
+        // US TOGETHER
+        { category: "Us Together", icon: "🌟", text: "I love that we have our own rhythm now, our own routines, our own jokes 🎵💕" },
+        { category: "Us Together", icon: "🤝", text: "We're a good team, and that's not nothing, that's everything 🤝💛" },
+        { category: "Us Together", icon: "🌟", text: "I love how we balance each other, your energy and my whatever it is I bring 🌞🌙" },
+        { category: "Us Together", icon: "🤝", text: "You make me want to show up better, every single day 💪💕" },
+        { category: "Us Together", icon: "🌟", text: "I love that we're the kind of people who say yes to weekends in the mountains 🏔️💕" },
+        { category: "Us Together", icon: "🤝", text: "Our shared adventures are my favorite memory bank 📸🗺️" },
+        // GRATITUDE
+        { category: "Gratitude", icon: "🙏", text: "Thank you for choosing me, every day, for a whole year ✨💛" },
+        { category: "Gratitude", icon: "🙏", text: "I'm so grateful for who you are and who you help me become 🙏💕" },
+        { category: "Gratitude", icon: "🙏", text: "You make ordinary days feel like enough, and that's real magic 🌻✨" },
+        { category: "Gratitude", icon: "🙏", text: "Thank you for being patient with my slower pace, in every sense 🐢💛" },
+        // EVERYDAY MAGIC
+        { category: "Everyday Magic", icon: "🌸", text: "I love your morning rituals. Tea, stretch, sun, you 🍵☀️" },
+        { category: "Everyday Magic", icon: "🌸", text: "You find joy in small things and that's a superpower 🌸💛" },
+        { category: "Everyday Magic", icon: "🌸", text: "I love how you turn ordinary moments into something I want to remember 📷💕" },
+        // GROWTH
+        { category: "Growth", icon: "🌱", text: "I love watching you grow into yourself more every month 🌱✨" },
+        { category: "Growth", icon: "🌱", text: "You inspire me to be braver, calmer, kinder 💪💛" },
+        { category: "Growth", icon: "🌱", text: "We're both works in progress and somehow we work 🛠️💛" },
+        // PEACE
+        { category: "Peace", icon: "🕊️", text: "I love sitting in silence with you, that kind of comfort is rare 🤫💛" },
+        { category: "Peace", icon: "🕊️", text: "You make me feel safe and alive at the same time, somehow 🛡️🔥" },
+        { category: "Peace", icon: "🕊️", text: "Resting with you is its own kind of adventure 🛏️☀️" },
+    ];
+
+    let currentIndex = -1;
+    let viewedCount = 0;
+    let isAnimating = false;
+
+    function showCard() {
+        const card = document.getElementById('affirmationCard');
+        card.style.opacity = '1';
+        card.style.transform = 'scale(1) translateY(0)';
+    }
+
+    function hideCard(cb) {
+        const card = document.getElementById('affirmationCard');
+        card.style.opacity = '0';
+        card.style.transform = 'scale(0.97) translateY(6px)';
+        setTimeout(cb, 360);
+    }
+
+    function swapContent() {
+        const icon     = document.getElementById('cardIcon');
+        const category = document.getElementById('cardCategory');
+        const text     = document.getElementById('cardText');
+        const counter  = document.getElementById('counter');
+
+        let newIndex;
+        do {
+            newIndex = Math.floor(Math.random() * affirmations.length);
+        } while (newIndex === currentIndex && affirmations.length > 1);
+        currentIndex = newIndex;
+
+        const a = affirmations[currentIndex];
+        icon.textContent     = a.icon;
+        category.textContent = a.category;
+        text.textContent     = a.text;
+
+        viewedCount++;
+        counter.textContent = `${viewedCount} ray${viewedCount !== 1 ? 's' : ''} of sunshine received 🌻`;
+    }
+
+    function generateAffirmation() {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        hideCard(() => {
+            swapContent();
+            requestAnimationFrame(() => requestAnimationFrame(() => {
+                showCard();
+                setTimeout(() => { isAnimating = false; }, 360);
+            }));
+        });
+    }
+
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            swapContent();
+            requestAnimationFrame(() => requestAnimationFrame(showCard));
+        }, 600);
+    });
+    </script>
+</body>
+</html>
